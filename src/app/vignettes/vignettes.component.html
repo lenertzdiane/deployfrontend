@@ -1,0 +1,58 @@
+<div class= "container-fluid full-width">
+  <div class="row row-no-gutter">
+
+
+<div class="col-sm-1">
+    <app-menu>  </app-menu>
+  </div>
+    <div class = "forms row col-sm-4">
+      <h1>Add A Vignette</h1>
+      <a class="add-toggle col-sm-6" routerLink="/standalone">Standalone</a>
+      <a class="add-toggle acting col-sm-6">Narrative</a>
+
+
+      <!-- <label for="insertvignette">New Vignette:</label> -->
+      <input class="form-control title" type="text" placeholder="Title" [(ngModel)]="this.newVignette.name" [ngModelOptions]="{standalone: true}"/>
+      <textarea appHighlight [(textArray)] = "this.textArray" id= "text-input" placeholder="Text" (input)="textArray = this.newVignette.text"></textarea>
+
+
+      <!-- <input class="form-control" type="text" placeholder="Location" (input)="this.features = this.newVignette.location" /> -->
+
+
+      <div>
+        <div class = "row parts " *ngFor="let part of textArray; let index = index" (click)="setEditPart(part, index)">
+          <div class="col-sm-2 part-index">
+            {{index + 1}}
+          </div>
+          <div class="col-sm-9">
+            {{part}}
+          </div>
+          <div class="col-sm-1">
+
+            <button class="btn btn-default" (click)="deletePart(index)">X</button>
+          </div>
+        </div>
+
+
+        <app-part-edit class = "" *ngIf = "editPart.length > 0" [(editPart)]= "this.editPart" [(index)] = "this.index" [(textArray)] = "this.textArray" ></app-part-edit>
+
+      </div>
+
+      <!-- <input class="form-control" type="text" placeholder="Characters" [(ngModel)]="this.newVignette.characters[0]" [ngModelOptions]="{standalone: true}"/>
+      <input class="form-control" type="text" placeholder="Characters" [(ngModel)]="this.newVignette.characters[1]" [ngModelOptions]="{standalone: true}"/> -->
+      <button class="btn btn-default btn-add" (click)="insertNewVignette()"> ADD </button>
+    </div>
+
+  <div class="">
+    <app-map id = "add-map" class = "add-map col-sm-5" (click) = "setLocation($event)"></app-map>
+    <button class="btn btn-default btn-remove" (click)="removeMarkers()"> REMOVE </button>
+  </div>
+
+
+
+
+  </div>
+</div>
+
+
+<!-- <leaflet></leaflet> -->

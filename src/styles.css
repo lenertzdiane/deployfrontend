@@ -1,0 +1,296 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+#map, #mapid {
+  min-height: 350px;
+  vertical-align: top;
+  height: 35vw;
+  /* display: inline-block; */
+  /* width: 88÷%; */
+  /* position: fixed; */
+  /* margin-left: 0; */
+  /* margin-right: 8vw; */
+
+  /* overflow: scroll; */
+}
+
+/* ADD VIGNETTE********************************************* ADD VIGNETTE  */
+
+h1 {
+  color: #A9D9E5;
+  font-size: 4vw;
+}
+
+.add-toggle {
+  text-align: center;
+  font-size: 1.8vw;
+  background-color: #65737e;
+  margin-bottom: 8px;
+  color: #A9D9E5;
+  border-bottom: 3px solid #65737e;
+  border-right: 3px solid #65737e;
+
+}
+
+.add-toggle:hover {
+  text-decoration: none;
+  background-color: #A9D9E5;
+  color: #65737e;
+}
+
+.acting {
+  background-color:#4f5b66;
+  border-bottom: 3px solid #A9D9E5;
+  border-right: 3px solid #A9D9E5;
+
+}
+
+.black {
+  color: black;
+  width: 100%;
+}
+
+.title {
+  height: 5vw;
+  font-size: 3vw;
+  background-color: #4f5b66 ;
+  color: #A9D9E5;
+}
+
+.btn-add {
+  width: 100%;
+  height: 2.9vw;
+  font-size: 1.8vw;
+  margin-top: 3vw;
+  background-color: #4f5b66 ;
+  color: #A9D9E5
+}
+
+.btn-add:hover {
+  background-color: #A9D9E5;
+  color: #65737e;
+}
+
+.forms {
+  margin-left: 3vw;
+  /* margin-top: 8vw; */
+}
+
+.add-map {
+  margin-left: 2vw;
+  margin-top: 6.8vw;
+  position: fixed;
+}
+
+#add-map {
+  height: 100%;
+}
+
+textarea {
+  max-width: 100%;
+  overflow: scroll;
+}
+
+#text-input {
+  width: 100%;
+  overflow: scroll;
+background-color: #65737e;
+  color: #A9D9E5;
+}
+
+#standalone-input {
+  background-color: #65737e;
+    color: #A9D9E5;
+}
+
+/* PART */
+.part-index {
+  font-size: 8vw;
+  max-height: 100%;
+  margin-bottom: 5px;
+}
+
+.parts {
+  height: 10vw;
+  overflow: hidden;
+  margin-top: 1.3vw;
+  margin-bottom: 1.3vw;
+
+  padding: 8px;
+  color: #AACCFF;
+  font-size: 1.3vw;
+}
+
+div.parts:hover {
+
+}
+
+
+.parts:nth-of-type(2n +1) {
+  border-width: 2px;
+  background-color: 	#4f5b66 ;
+  color:  #A9D9E5;
+}
+
+.parts:nth-of-type(2n + 2) {
+  border-width: 2px;
+  background-color: #65737e ;
+  color:  #A9D9E5;
+
+}
+
+
+
+/* NAV ********************************************* NAV */
+
+.nav {
+  height: 100vw;
+}
+#nav {
+  height: 100vw;
+}
+
+.btn-menu {
+  font-size: 1.5vw;
+  width: 100%;
+  height: 3vw;
+  margin-top: 17px;
+  text-align: center;
+}
+
+.btn-menu:nth-of-type(2n +1) {
+  border-width: 2px;
+  background-color: 	#4f5b66 ;
+  color: #A9D9E5;
+}
+
+.btn-menu:nth-of-type(2n + 2) {
+  border-width: 2px;
+  background-color: #65737e ;
+  color: #A9D9E5;
+}
+
+.btn-menu:hover {
+  text-decoration: none;
+  background-color: #A9D9E5;
+  color: #65737e;
+}
+
+
+.leaflet-popup-content  {
+  background-color: #A9D9E5;
+}
+.leaflet-popup-content-wrapper {
+  background-color: #A9D9E5
+}
+
+/* READER ********************************************* READER  */
+
+
+.txt {
+  font-size: 1.5vw;
+  height: 20vw;
+  overflow: scroll;
+}
+
+.reader {
+  margin-right: 8vw;
+}
+
+
+.reader-title {
+  height: 5vw;
+  font-size: 3vw;
+}
+
+path {
+  fill: none;
+  stroke: #A9D9E5;
+}
+
+.big {
+  margin-top: 4vw;
+}
+
+.vignette {
+  border: 2px solid black;
+  margin: 2vw;
+  max-height: 10vw;
+  overflow: scroll;
+  background-color: white;
+}
+
+.read-vignette {
+  background-color: #343d46;
+  color: #A9D9E5;
+  font-size: 2.3vw;
+}
+
+
+::webkit-input-placeholder {
+  vertical-align: top;
+ font-size: 14px;
+ color: #A9D9E5;
+ /* text-transform: uppercase;
+ text-transform: uppercase; */
+ text-align: left;
+ font-weight: bold;
+}
+
+
+/* .container {
+  max-height: 100vw;
+  overflow: scroll;
+} */
+
+.travelMarker {
+  opacity: .6;
+}
+
+
+/* TEXTAREA RESIZE ********************************************* TEXTAREA RESIZE  */
+
+body {
+  margin: 20px;
+  font-family: 'Roboto Condensed', sans-serif;
+
+  background-color: #343d46;
+
+}
+
+
+
+p {
+  margin-bottom: 14px;
+}
+
+
+
+textarea {
+  color: #444;
+  padding: 5px;
+}
+
+.txtstuff {
+  resize: none; /* remove this if you want the user to be able to resize it in modern browsers */
+  overflow: hidden;
+}
+
+.hiddendiv {
+  position: absolute;
+  left: -9999px;
+  visibility: hidden;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word; /* future version of deprecated 'word-wrap' */
+}
+
+/* the styles for 'commmon' are applied to both the textarea and the hidden clone */
+/* these must be the same for both */
+.common {
+  width: 500px;
+  min-height: 50px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  overflow: hidden;
+}
