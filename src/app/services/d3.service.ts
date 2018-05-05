@@ -153,7 +153,7 @@ export class D3Service {
     // this.timeTransition()
   }
 
-  timeTransition(){
+  timeTransition() {
     console.log(this.linePath);
     transition(this.linePath);
 
@@ -165,7 +165,7 @@ export class D3Service {
                     console.log('not callin!!!!')
                       // d3.select(this).call(transition);// infinite loop
                   });
-          } //end transition
+          }; //end transition
 
           function tweenDash(linePath) => {
            return function(t) {

@@ -33,18 +33,18 @@ export class StandaloneComponent implements OnInit {
   ngOnInit() {
     this.newStandalone = Standalone.CreateDefault();
     this.getStandalones();
-    this.anchors = []
+    this.anchors = [];
     this.getAnchors();
     this.searchCriteria = '';
-    this.feature = ''
-    this.feat = ''
+    this.feature = '';
+    this.feat = '';
     this.standalones = [];
     this.anchorsPlaced = false;
 
 
 
   setLocation(event) {
-    console.log('in setlocation')
+    console.log('in setlocation');
     if(this.feat.length === 0) {
       let latlng = this.mapService.addStandaloneMarker(event)
 

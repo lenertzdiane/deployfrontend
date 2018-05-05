@@ -34,7 +34,7 @@ export class MapComponent implements OnInit, OnChanges {
       layers: L.tileLayer("http://{s}.sm.mapstack.stamen.com/(toner-lite,$fff[difference],$fff[@23],$fff[hsl-saturation@20])/{z}/{x}/{y}.png" //, {
       // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
       // [this.mapService.baseMaps.OpenStreetMap]
-    });
+    }),
 
 
     this.map = map;
