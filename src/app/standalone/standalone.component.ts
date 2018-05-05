@@ -50,13 +50,13 @@ export class StandaloneComponent implements OnInit {
 
       this.feat = `{       \"type\": \"Feature\",       \"properties\": {},       \"geometry\": {         \"type\": \"Point\",         \"coordinates\": [           ${latlng.lng},           ${latlng.lat}        ]       }     }, `
     this.feature = this.feat
-  }
-  }
+  };
+};
 
   removeMarkers(){
     this.mapService.removeMarkers()
     this.feat = ''
-  }
+  };
 
   showAnchors() {
     if(!this.anchorsPlaced){
@@ -64,14 +64,14 @@ export class StandaloneComponent implements OnInit {
       if(this.anchors){
         this.d3Service.placeAnchors(this.mapService.anchorGroup, this.anchors)
         this.anchorsPlaced = true
-      }
-    }
-  }
+      };
+    };
+  };
 
   hideAnchors() {
     this.mapService.removeAnchors();
     this.anchorsPlaced = false
-  }
+  };
   getAnchors(){
     this.anchorService.getAnchors(this.searchCriteria)
     .subscribe(
@@ -87,7 +87,7 @@ export class StandaloneComponent implements OnInit {
               this.anchors.push(newAnchor);
             })
           })
-        }
+        };
 
   getStandalones(){
     this.standaloneService.getStandalones(this.searchCriteria)
@@ -102,9 +102,9 @@ export class StandaloneComponent implements OnInit {
               element.characters,
               element.location)
               this.standalones.push(newStandalone);
-            })
-          })
-        }
+            });
+          });
+        };
 
 
         insertNewStandalone() {
@@ -118,11 +118,10 @@ export class StandaloneComponent implements OnInit {
               this.newStandalone = Standalone.CreateDefault();
 
               console.log("Added standalone.");
-            }
+            };
           )
           this.mapService.removeMarkers()
           this.feat = ''
 
-        }
-
-      }
+        };
+      };

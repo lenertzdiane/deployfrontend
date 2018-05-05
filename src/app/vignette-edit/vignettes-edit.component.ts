@@ -45,8 +45,8 @@ export class VignetteEditComponent implements OnInit {
               element.location,
               element.order)
               this.vignettes.push(newVignette);
-            })
-          })
+            });
+          });
 
 
   updateVignette(vignette:Vignette) {
@@ -61,7 +61,7 @@ export class VignetteEditComponent implements OnInit {
          this.vignette = Vignette.CreateDefault();
 
          console.log("Added vignette.");
-      }
+      };
     )
-  }
-}
+  };
+};
