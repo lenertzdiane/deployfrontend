@@ -23,7 +23,7 @@ export class MapComponent implements OnInit, OnChanges {
   constructor(private mapService: MapService, private d3Service: D3Service) { }
 
   ngOnInit() {
-    this.features = [];
+    this.features = []
 
     let map = L.map("map", {
       zoomControl: false,
@@ -48,7 +48,7 @@ export class MapComponent implements OnInit, OnChanges {
     // this.d3Service.readyMap(this.mapService.map) //this.actingVignette.location);
     // this.d3Service.(this.mapService.map) //this.actingVignette.location);
     // this.d3Service.placeMarkers(this.mapService.map) // this.actingVignette.location)
-  };
+  }
 
 
   //when a new vignette is actingVignette

@@ -33,46 +33,45 @@ export class StandaloneComponent implements OnInit {
   ngOnInit() {
     this.newStandalone = Standalone.CreateDefault();
     this.getStandalones();
-    this.anchors = [];
+    this.anchors = []
     this.getAnchors();
     this.searchCriteria = '';
-    this.feature = '';
-    this.feat = '';
+    this.feature = ''
+    this.feat = ''
     this.standalones = [];
     this.anchorsPlaced = false;
 
 
 
-  setLocation (event) {
-    console.log('in setlocation');
+  setLocation(event) {
+    console.log('in setlocation')
     if(this.feat.length === 0) {
-      let latlng = this.mapService.addStandaloneMarker(event);
+      let latlng = this.mapService.addStandaloneMarker(event)
 
       this.feat = `{       \"type\": \"Feature\",       \"properties\": {},       \"geometry\": {         \"type\": \"Point\",         \"coordinates\": [           ${latlng.lng},           ${latlng.lat}        ]       }     }, `
-      this.feature = this.feat
-    };
-  };
+    this.feature = this.feat
+  }
+  }
 
-  removeMarkers (){
+  removeMarkers(){
     this.mapService.removeMarkers()
     this.feat = ''
-  };
+  }
 
-  showAnchors () {
+  showAnchors() {
     if(!this.anchorsPlaced){
       this.mapService.readyAnchorGroup()
       if(this.anchors){
         this.d3Service.placeAnchors(this.mapService.anchorGroup, this.anchors)
         this.anchorsPlaced = true
-      };
-    };
-  };
+      }
+    }
+  }
 
   hideAnchors() {
     this.mapService.removeAnchors();
     this.anchorsPlaced = false
-  };
-
+  }
   getAnchors(){
     this.anchorService.getAnchors(this.searchCriteria)
     .subscribe(
@@ -88,7 +87,7 @@ export class StandaloneComponent implements OnInit {
               this.anchors.push(newAnchor);
             })
           })
-        };
+        }
 
   getStandalones(){
     this.standaloneService.getStandalones(this.searchCriteria)
@@ -103,9 +102,9 @@ export class StandaloneComponent implements OnInit {
               element.characters,
               element.location)
               this.standalones.push(newStandalone);
-            });
-          });
-        };
+            })
+          })
+        }
 
 
         insertNewStandalone() {
@@ -119,11 +118,11 @@ export class StandaloneComponent implements OnInit {
               this.newStandalone = Standalone.CreateDefault();
 
               console.log("Added standalone.");
-            };
+            }
           )
           this.mapService.removeMarkers()
           this.feat = ''
 
-        };
+        }
+
       }
-    }

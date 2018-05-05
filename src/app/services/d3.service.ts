@@ -153,11 +153,11 @@ export class D3Service {
     // this.timeTransition()
   }
 
-  timeTransition() {
+  timeTransition(){
     console.log(this.linePath);
     transition(this.linePath);
 
-    function transition=(linePath)=>{
+    function transition(linePath) => {
               linePath.transition()
                   .duration(7500)
                   .attrTween("stroke-dasharray", tweenDash(linePath))
@@ -165,9 +165,9 @@ export class D3Service {
                     console.log('not callin!!!!')
                       // d3.select(this).call(transition);// infinite loop
                   });
-          }; //end transition
+          } //end transition
 
-          function tweenDash =(linePath)=>{
+          function tweenDash(linePath) => {
            return function(t) {
                //total length of path (single value)
                var l = linePath.node().getTotalLength();
