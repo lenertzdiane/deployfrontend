@@ -23,7 +23,7 @@ export class MapComponent implements OnInit, OnChanges {
   constructor(private mapService: MapService, private d3Service: D3Service) { }
 
   ngOnInit() {
-    this.features = []
+    this.features = [];
 
     let map = L.map("map", {
       zoomControl: false,
@@ -34,7 +34,7 @@ export class MapComponent implements OnInit, OnChanges {
       layers: L.tileLayer("http://{s}.sm.mapstack.stamen.com/(toner-lite,$fff[difference],$fff[@23],$fff[hsl-saturation@20])/{z}/{x}/{y}.png" //, {
       // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>'
       // [this.mapService.baseMaps.OpenStreetMap]
-    }),
+    });
 
 
     this.map = map;
@@ -48,7 +48,7 @@ export class MapComponent implements OnInit, OnChanges {
     // this.d3Service.readyMap(this.mapService.map) //this.actingVignette.location);
     // this.d3Service.(this.mapService.map) //this.actingVignette.location);
     // this.d3Service.placeMarkers(this.mapService.map) // this.actingVignette.location)
-  }
+  };
 
 
   //when a new vignette is actingVignette
