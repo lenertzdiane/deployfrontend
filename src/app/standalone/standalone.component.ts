@@ -46,12 +46,12 @@ export class StandaloneComponent implements OnInit {
   setLocation (event) {
     console.log('in setlocation');
     if(this.feat.length === 0) {
-      let latlng = this.mapService.addStandaloneMarker(event)
+      let latlng = this.mapService.addStandaloneMarker(event);
 
       this.feat = `{       \"type\": \"Feature\",       \"properties\": {},       \"geometry\": {         \"type\": \"Point\",         \"coordinates\": [           ${latlng.lng},           ${latlng.lat}        ]       }     }, `
-    this.feature = this.feat
+      this.feature = this.feat
+    };
   };
-};
 
   removeMarkers (){
     this.mapService.removeMarkers()
