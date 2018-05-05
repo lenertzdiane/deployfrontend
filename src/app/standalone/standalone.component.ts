@@ -43,7 +43,7 @@ export class StandaloneComponent implements OnInit {
 
 
 
-  setLocation(event) {
+  setLocation (event) {
     console.log('in setlocation');
     if(this.feat.length === 0) {
       let latlng = this.mapService.addStandaloneMarker(event)
@@ -53,12 +53,12 @@ export class StandaloneComponent implements OnInit {
   };
 };
 
-  removeMarkers(){
+  removeMarkers (){
     this.mapService.removeMarkers()
     this.feat = ''
   };
 
-  showAnchors() {
+  showAnchors () {
     if(!this.anchorsPlaced){
       this.mapService.readyAnchorGroup()
       if(this.anchors){
@@ -72,6 +72,7 @@ export class StandaloneComponent implements OnInit {
     this.mapService.removeAnchors();
     this.anchorsPlaced = false
   };
+
   getAnchors(){
     this.anchorService.getAnchors(this.searchCriteria)
     .subscribe(
@@ -124,4 +125,5 @@ export class StandaloneComponent implements OnInit {
           this.feat = ''
 
         };
-      };
+      }
+    }
