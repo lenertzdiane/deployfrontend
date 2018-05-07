@@ -14,7 +14,7 @@ export class AnchorService {
 
     getAnchors(searchCriteria:any) : Observable<Anchor[]>{
 
-        return this.http.get("http://localhost:3000/getAnchors")
+        return this.http.get("https://groupthinktv.herokuapp.com/getAnchors")
                 .map((res:any) => {
                     return res.json();
                 })
@@ -24,7 +24,7 @@ export class AnchorService {
     }
 
     insertNewAnchor(anchor:Anchor): Observable<any>{
-        return this.http.post("http://localhost:3000/insertNewAnchor", anchor)
+        return this.http.post("https://groupthinktv.herokuapp.com/insertNewAnchor", anchor)
             .map((res:any) => {
                 return res.json();
             })

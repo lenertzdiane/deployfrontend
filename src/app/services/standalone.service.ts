@@ -16,7 +16,7 @@ export class StandaloneService {
       let params: URLSearchParams = new URLSearchParams();
       params.set('name', searchCriteria);
 
-        return this.http.get("http://localhost:3000/getStandalones", { search: params })
+        return this.http.get("https://groupthinktv.herokuapp.com/getStandalones", { search: params })
                 .map((res:any) => {
                     return res.json();
                 })
@@ -26,7 +26,7 @@ export class StandaloneService {
     }
 
     insertNewStandalone(standalone:Standalone): Observable<any>{
-        return this.http.post("http://localhost:3000/insertNewStandalone", standalone)
+        return this.http.post("https://groupthinktv.herokuapp.com/insertNewStandalone", standalone)
             .map((res:any) => {
                 return res.json();
             })
