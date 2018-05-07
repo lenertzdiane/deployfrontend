@@ -25,7 +25,7 @@ export class MapComponent implements OnInit, OnChanges {
   ngOnInit() {
     this.features = []
 
-    let map = L.map("map", {
+    var map = L.map("map", {
       zoomControl: false,
       center: L.latLng(41.79, -87.65),
       zoom: 17,

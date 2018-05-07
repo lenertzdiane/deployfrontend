@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Http, URLSearchParams } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs';
+import { Subject } from 'rxjs';
 import { Anchor } from '../models/anchor';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/throw';
+import 'rxjs/operators';
+import 'rxjs/operators';
+import 'rxjs/operators';
 
 @Injectable()
 export class AnchorService {
