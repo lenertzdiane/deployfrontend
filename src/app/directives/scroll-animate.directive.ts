@@ -14,7 +14,8 @@ export class ScrollAnimateDirective {
   @Input() callback: Function;
 
   @HostListener('scroll') scroll($event) {
-    let vignetteElements = document.getElementsByClassName("read-vignette")
+    let vignetteElements = document.getElementsByClassName("read-vignette");
+    let workingVignette;
     for(let i = 0; i < vignetteElements.length; i ++) {
       // console.log($(elements[i]).position().top, $(window).innerHeight()))
       // console.log(i)

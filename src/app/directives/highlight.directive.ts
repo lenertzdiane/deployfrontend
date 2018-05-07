@@ -1,6 +1,7 @@
 import { Directive, HostListener, Input } from '@angular/core';
 declare var jquery:any;
 import {MapService} from '../services/map.service'
+declare var $ :any;
 
 @Directive({
   selector: '[appHighlight]'
@@ -16,7 +17,7 @@ export class HighlightDirective {
 
 
   @HostListener('mouseup') mouseup($event) {
-    let text = document.getElementById("text-input")
+    let text = $(document.getElementById("text-input"))
     let start = text.selectionStart
     let end = text.selectionEnd
     let selection = text.value.slice(start, end)
@@ -48,7 +49,7 @@ export class HighlightDirective {
   }
     @HostListener('keyup') keyup($event) {
 
-    let text = document.getElementById("text-input")
+    let text = $(document.getElementById("text-input"))
 
     let hiddenDiv = document.createElement('div'),
     content = null;
