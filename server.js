@@ -7,5 +7,5 @@ console.log("Listening on Port 3000");
 });
 
 app.get('/', function (req, res) {
-  res.sendFile('./src/index.html');
+  res.sendFile(__dirname + './src/index.html');
 });
