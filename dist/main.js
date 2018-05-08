@@ -485,8 +485,8 @@ var HighlightDirective = /** @class */ (function () {
     }
     HighlightDirective.prototype.mouseup = function ($event) {
         var text = $(document.getElementById("text-input"));
-        var start = text.selectionStart;
-        var end = text.selectionEnd;
+        var start = text[0].selectionStart;
+        var end = text[0].selectionEnd;
         var selection = text[0].value.slice(start, end);
         if (start < end) {
             this.textArray.push(" " + selection);
@@ -495,15 +495,29 @@ var HighlightDirective = /** @class */ (function () {
         text[0].value = text[0].value.slice(0, start) + $(text)[0].value.slice(end);
         // text = document.getElementById("text-input")
         var hiddenDiv = document.createElement('div'), content = null;
-        text.classList.add('txtstuff');
+        text[0].classList.add('txtstuff');
         hiddenDiv.classList.add('hiddendiv', 'common');
         document.body.appendChild(hiddenDiv);
         // text = text.slice(highlighted, another)
-        content = text.value;
+        content = text[0].value;
         console.log(text);
         hiddenDiv.innerHTML = content + '\n\n';
-        text.style.height = hiddenDiv.getBoundingClientRect().height + 'px';
+        text[0].style.height = hiddenDiv.getBoundingClientRect().height + 'px';
         //THIS IS A RIDICULOUS PLACE TO PUT THIS FUNCTION CALL, SHOULD BE ON SOME NG INIT SOMEWHERE BUT.
+    };
+    HighlightDirective.prototype.keyup = function ($event) {
+        var text = $(document.getElementById("text-input"));
+        var hiddenDiv = document.createElement('div'), content = null;
+        text[0].classList.add('txtstuff');
+        console.log(hiddenDiv);
+        hiddenDiv[0].classList.add('hiddendiv', 'common');
+        document.body.appendChild(hiddenDiv);
+        // text = text.slice(highlighted, another)
+        content = text[0].value;
+        console.log(text);
+        hiddenDiv.innerHTML = content + '\n\n';
+        text[0].style.height = hiddenDiv.getBoundingClientRect().height + 'px';
+        //push into text array
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
@@ -515,6 +529,12 @@ var HighlightDirective = /** @class */ (function () {
         __metadata("design:paramtypes", [Object]),
         __metadata("design:returntype", void 0)
     ], HighlightDirective.prototype, "mouseup", null);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["HostListener"])('keyup'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", void 0)
+    ], HighlightDirective.prototype, "keyup", null);
     HighlightDirective = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Directive"])({
             selector: '[appHighlight]'

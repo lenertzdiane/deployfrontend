@@ -18,8 +18,8 @@ export class HighlightDirective {
 
   @HostListener('mouseup') mouseup($event) {
     let text = $(document.getElementById("text-input"))
-    let start = text.selectionStart
-    let end = text.selectionEnd
+    let start = text[0].selectionStart
+    let end = text[0].selectionEnd
     let selection = text[0].value.slice(start, end)
     if(start<end){
       this.textArray.push(" " + selection)
@@ -33,48 +33,47 @@ export class HighlightDirective {
     let hiddenDiv = document.createElement('div'),
     content = null;
 
-    text.classList.add('txtstuff');
+    text[0].classList.add('txtstuff');
     hiddenDiv.classList.add('hiddendiv', 'common');
 
     document.body.appendChild(hiddenDiv);
     // text = text.slice(highlighted, another)
 
 
-      content = text.value;
+      content = text[0].value;
       console.log(text)
       hiddenDiv.innerHTML = content + '\n\n';
-      text.style.height = hiddenDiv.getBoundingClientRect().height + 'px';
+      text[0].style.height = hiddenDiv.getBoundingClientRect().height + 'px';
 
 //THIS IS A RIDICULOUS PLACE TO PUT THIS FUNCTION CALL, SHOULD BE ON SOME NG INIT SOMEWHERE BUT.
 
 
   }
-  //   @HostListener('keyup') keyup($event) {
-  //
-  //   let text = $(document.getElementById("text-input"))
-  //
-  //   let hiddenDiv = document.createElement('div'),
-  //   content = null;
-  //
-  //   console.log(text)
-  //   console.log(text.classList)
-  //   text.classList.add('txtstuff');
-  //   hiddenDiv.classList.add('hiddendiv', 'common');
-  //
-  //   document.body.appendChild(hiddenDiv);
-  //   // text = text.slice(highlighted, another)
-  //
-  //
-  //     content = text.value;
-  //     console.log(text)
-  //     hiddenDiv.innerHTML = content + '\n\n';
-  //     text.style.height = hiddenDiv.getBoundingClientRect().height + 'px';
-  //
-  //
-  //
-  //   //push into text array
-  //
-  // }
+    @HostListener('keyup') keyup($event) {
+
+    let text = $(document.getElementById("text-input"))
+
+    let hiddenDiv = document.createElement('div'),
+    content = null;
+
+    text[0].classList.add('txtstuff');
+    console.log(hiddenDiv)
+    hiddenDiv[0].classList.add('hiddendiv', 'common');
+
+    document.body.appendChild(hiddenDiv);
+    // text = text.slice(highlighted, another)
+
+
+      content = text[0].value;
+      console.log(text)
+      hiddenDiv.innerHTML = content + '\n\n';
+      text[0].style.height = hiddenDiv.getBoundingClientRect().height + 'px';
+
+
+
+    //push into text array
+
+  }
 
 
 
