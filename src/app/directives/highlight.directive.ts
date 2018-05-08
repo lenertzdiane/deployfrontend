@@ -24,7 +24,9 @@ export class HighlightDirective {
     if(start<end){
       this.textArray.push(" " + selection)
     }
-    $(text)[0].value = $(text)[0].value.slice(0, start) + $(text)[0].value.slice(end)
+
+    console.log(text)
+    text[0].value = text[0].value.slice(0, start) + $(text)[0].value.slice(end)
 
     // text = document.getElementById("text-input")
 
