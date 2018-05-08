@@ -20,6 +20,9 @@ export class HighlightDirective {
     let text = $(document.getElementById("text-input"))
     let start = text.selectionStart
     let end = text.selectionEnd
+    console.log(text)
+    console.log(text)
+    console.log(text)
     let selection = text.value.slice(start, end)
     if(start<end){
       this.textArray.push(" " + selection)
