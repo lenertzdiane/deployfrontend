@@ -487,10 +487,7 @@ var HighlightDirective = /** @class */ (function () {
         var text = $(document.getElementById("text-input"));
         var start = text.selectionStart;
         var end = text.selectionEnd;
-        console.log(text);
-        console.log(text);
-        console.log(text);
-        var selection = text.value.slice(start, end);
+        var selection = text[0].value.slice(start, end);
         if (start < end) {
             this.textArray.push(" " + selection);
         }
