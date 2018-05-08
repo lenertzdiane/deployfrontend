@@ -47,30 +47,32 @@ export class HighlightDirective {
 
 
   }
-    @HostListener('keyup') keyup($event) {
-
-    let text = $(document.getElementById("text-input"))
-
-    let hiddenDiv = document.createElement('div'),
-    content = null;
-
-    text.classList.add('txtstuff');
-    hiddenDiv.classList.add('hiddendiv', 'common');
-
-    document.body.appendChild(hiddenDiv);
-    // text = text.slice(highlighted, another)
-
-
-      content = text.value;
-      console.log(text)
-      hiddenDiv.innerHTML = content + '\n\n';
-      text.style.height = hiddenDiv.getBoundingClientRect().height + 'px';
-
-
-
-    //push into text array
-
-  }
+  //   @HostListener('keyup') keyup($event) {
+  //
+  //   let text = $(document.getElementById("text-input"))
+  //
+  //   let hiddenDiv = document.createElement('div'),
+  //   content = null;
+  //
+  //   console.log(text)
+  //   console.log(text.classList)
+  //   text.classList.add('txtstuff');
+  //   hiddenDiv.classList.add('hiddendiv', 'common');
+  //
+  //   document.body.appendChild(hiddenDiv);
+  //   // text = text.slice(highlighted, another)
+  //
+  //
+  //     content = text.value;
+  //     console.log(text)
+  //     hiddenDiv.innerHTML = content + '\n\n';
+  //     text.style.height = hiddenDiv.getBoundingClientRect().height + 'px';
+  //
+  //
+  //
+  //   //push into text array
+  //
+  // }
 
 
 
