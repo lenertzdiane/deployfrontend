@@ -6,7 +6,7 @@ app.listen(port, "0.0.0.0", function() {
 console.log("Listening on Port 3000");
 });
 
-app.use(express.static(__dirname + '/dist'));
+// app.use(express.static(__dirname + '/dist'));
 
 app.get('/*', function(req,res) {
 
