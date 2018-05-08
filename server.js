@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-ver path = require('path')
+var path = require('path')
 var port = process.env.PORT || 3000;
 
 app.listen(port, "0.0.0.0", function() {
