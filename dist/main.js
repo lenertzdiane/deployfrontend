@@ -585,9 +585,13 @@ var ScrollAnimateDirective = /** @class */ (function () {
             //DIRTY HACK have to find something beetter than window height...
             var txt = document.getElementsByClassName("txt");
             var txtHeight = $(txt).innerHeight();
+            console.log($(vignetteElements));
+            console.log(vignetteElements);
             if ($($(vignetteElements[i]).children().last()).position()) {
                 if ($($(vignetteElements[i]).children().last()).position().top > txtHeight) {
-                    var workingVignette_1 = $(vignetteElements[i]);
+                    console.log(vignetteElements);
+                    console.log($(vignetteElements));
+                    workingVignette = $(vignetteElements[i]);
                     break;
                 }
             }

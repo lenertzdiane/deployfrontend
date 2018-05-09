@@ -22,11 +22,14 @@ export class ScrollAnimateDirective {
       //DIRTY HACK have to find something beetter than window height...
       let txt = document.getElementsByClassName("txt")
       let txtHeight = $(txt).innerHeight()
-
+      console.log($(vignetteElements))
+      console.log(vignetteElements)
       if($($(vignetteElements[i]).children().last()).position()){
 
       if($($(vignetteElements[i]).children().last()).position().top > txtHeight){
-        let workingVignette = $(vignetteElements[i])
+        console.log(vignetteElements)
+        console.log($(vignetteElements))
+        workingVignette = $(vignetteElements[i])
         break
       }
     }
