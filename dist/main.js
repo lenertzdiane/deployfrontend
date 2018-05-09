@@ -510,7 +510,7 @@ var HighlightDirective = /** @class */ (function () {
         var hiddenDiv = document.createElement('div'), content = null;
         text[0].classList.add('txtstuff');
         console.log(hiddenDiv);
-        hiddenDiv[0].classList.add('hiddendiv', 'common');
+        hiddenDiv.classList.add('hiddendiv', 'common');
         document.body.appendChild(hiddenDiv);
         // text = text.slice(highlighted, another)
         content = text[0].value;
@@ -592,6 +592,7 @@ var ScrollAnimateDirective = /** @class */ (function () {
                 }
             }
         }
+        console.log(workingVignette);
         // console.log(event.path[0].children)
         // console.log(event.path[0].children[1].scrollTop)
         this.callback(event.target.scrollTop, event.target, workingVignette);
@@ -1392,6 +1393,9 @@ var ReaderComponent = /** @class */ (function () {
         this.scrollTop = scrollTop;
         // this.actingVignette =
         this.text = text;
+        console.log(scrollTop);
+        console.log(text);
+        console.log(vignette);
         // this.standalones = standalones;
         this.setActingVignette(vignette);
     };
@@ -1672,10 +1676,12 @@ var D3Service = /** @class */ (function () {
     };
     D3Service.prototype.drawLine = function (map, scrollTop, text, location) {
         // let map = map
-        var actingVignette; //these allow me to compile but throw errors when scrolling
-        var actingChild;
-        var actingLast;
-        var actingLastNum;
+        var vignetteElements = document.getElementsByClassName("read-vignette");
+        var actingVignette = $(vignetteElements[0]); //these allow me to compile but throw errors when scrolling
+        var actingChild = actingVignette.children().children()[1];
+        var actingLast = actingVignette.children().children()[0];
+        ;
+        var actingLastNum = 0;
         var marker = this.marker;
         var projectedArray = this.projectedArray;
         var linePath = this.linePath;
@@ -1751,7 +1757,7 @@ var D3Service = /** @class */ (function () {
             function render() {
                 // console.log('in render')
                 var length = linePath.node().getTotalLength();
-                var vignetteElements = document.getElementsByClassName("read-vignette");
+                vignetteElements = document.getElementsByClassName("read-vignette");
                 for (var i = 0; i < vignetteElements.length; i++) {
                     // console.log($(elements[i]).position().top, $(window).innerHeight()))
                     // console.log(i)
@@ -1760,7 +1766,7 @@ var D3Service = /** @class */ (function () {
                     txtHeight = $(txt).innerHeight();
                     if ($($(vignetteElements[i]).children().last()).position()) {
                         if ($($(vignetteElements[i]).children().last()).position().top > txtHeight) {
-                            var actingVignette_1 = $(vignetteElements[i]);
+                            actingVignette = $(vignetteElements[i]);
                             break;
                         }
                     }
@@ -1774,15 +1780,15 @@ var D3Service = /** @class */ (function () {
                     // console.log(i)
                     if ($(children[i]).position().top > txtHeight) {
                         // if($(children[i]).has('div')){
-                        var actingChild_1 = $(children[i]);
+                        actingChild = $(children[i]);
                         // console.log(actingChild)
                         // }
                         // console.log('actingChild')
                         // console.log(actingChild)
                         //this wont work between the last one of the last vignette and the first
                         //one of the second vignette
-                        var actingLast_1 = $(children[i - 1]);
-                        var actingLastNum_1 = i;
+                        actingLast = $(children[i - 1]);
+                        actingLastNum = i;
                         break;
                     }
                 }

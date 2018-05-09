@@ -58,7 +58,7 @@ export class HighlightDirective {
 
     text[0].classList.add('txtstuff');
     console.log(hiddenDiv)
-    hiddenDiv[0].classList.add('hiddendiv', 'common');
+    hiddenDiv.classList.add('hiddendiv', 'common');
 
     document.body.appendChild(hiddenDiv);
     // text = text.slice(highlighted, another)
