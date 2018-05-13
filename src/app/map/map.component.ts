@@ -28,7 +28,7 @@ export class MapComponent implements OnInit, OnChanges {
     var map = L.map("map", {
       zoomControl: false,
       center: L.latLng(41.79, -87.65),
-      zoom: 17,
+      zoom: 14,
       // minZoom: 8,
       // maxZoom: 18,
       layers: L.tileLayer("http://{s}.sm.mapstack.stamen.com/(toner-lite,$fff[difference],$fff[@23],$fff[hsl-saturation@20])/{z}/{x}/{y}.png") //, {

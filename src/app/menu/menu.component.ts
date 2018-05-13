@@ -5,22 +5,22 @@ import { trigger, state, style, transition, animate, group, query, stagger, keyf
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css'],
   animations: [
-    trigger('myAnimation', [
-      state('true', style({
-        'transform': 'translateY(-300%)'
-      })
-    ),
-    transition('true => false',
-    animate('350ms', style({ transform: 'translateX(0)'})))
-  ]),
-  trigger('myAnimation2', [
-    state('true', style({
-      'transform': 'translateY(-500%)'
-    })
-  ),
-  transition('true => false',
-  animate('350ms', style({ transform: 'translateX(0)'})))
-]),
+//     trigger('myAnimation', [
+//       state('true', style({
+//         'transform': 'translateY(-300%)'
+//       })
+//     ),
+//     transition('true => false',
+//     animate('350ms', style({ transform: 'translateX(0)'})))
+//   ]),
+//   trigger('myAnimation2', [
+//     state('true', style({
+//       'transform': 'translateY(-500%)'
+//     })
+//   ),
+//   transition('true => false',
+//   animate('350ms', style({ transform: 'translateX(0)'})))
+// ]),
 trigger('myAnimation3', [
   state('true', style({
     'transform': 'translateY(-700%)'
